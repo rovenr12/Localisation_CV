@@ -16,6 +16,8 @@ class Color(object):
         self.r = r
         
         ## TODO: Set the other two color variables g and b
+        self.g = g
+        self.b = b
         
 
     # __repr__ is called when a color is printed using print(some_color)
@@ -32,4 +34,9 @@ class Color(object):
         
         return string
     
-    
+    def __add__(self, other):
+        new_r = (self.r + other.r) / 2
+        new_g = (self.g + other.g) / 2
+        new_b = (self.b + other.b) / 2
+
+        return Color(new_r, new_g, new_b)
